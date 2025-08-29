@@ -1,10 +1,11 @@
-package com.picpay.desafio.android.feature_user.presentation
+package com.picpay.desafio.android.com.picpay.desafio.android.feature_user.presentation.view_model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.picpay.desafio.android.feature_user.data.NetworkResult
+import com.picpay.desafio.android.com.picpay.desafio.android.common.NetworkResult
 import com.picpay.desafio.android.feature_user.domain.UserUseCase
 import com.picpay.desafio.android.feature_user.domain.exception.NetworkException
+import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.presentation.view_state.MainUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -1,4 +1,4 @@
-package com.picpay.desafio.android.feature_user.presentation
+package com.picpay.desafio.android.com.picpay.desafio.android.feature_user.presentation.ui
 
 import android.os.Bundle
 import android.view.View
@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.picpay.desafio.android.databinding.ActivityMainBinding
+import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.presentation.view_state.MainUiState
+import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.presentation.view_model.MainViewModel
+import com.picpay.desafio.android.feature_user.presentation.UserListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -1,6 +1,5 @@
-package com.picpay.desafio.android.feature_user.data.di
+package com.picpay.desafio.android.com.picpay.desafio.android.common.di
 
-import com.picpay.desafio.android.feature_user.data.UserApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -40,11 +39,5 @@ object NetworkModule {
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-    }
-
-    @Provides
-    @Singleton
-    fun provideUserApiService(retrofit: Retrofit): UserApiService {
-        return retrofit.create(UserApiService::class.java)
     }
 }

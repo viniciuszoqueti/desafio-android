@@ -1,6 +1,6 @@
-package com.picpay.desafio.android.feature_user.presentation
+package com.picpay.desafio.android.com.picpay.desafio.android.feature_user.presentation.view_state
 
-import com.picpay.desafio.android.feature_user.domain.UserDomainModel
+import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.domain.model.UserDomainModel
 
 sealed interface MainUiState {
     object Loading : MainUiState

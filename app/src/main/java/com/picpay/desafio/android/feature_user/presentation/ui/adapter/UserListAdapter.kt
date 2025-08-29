@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.picpay.desafio.android.databinding.ListItemUserBinding
-import com.picpay.desafio.android.feature_user.domain.UserDomainModel
+import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.domain.model.UserDomainModel
 
 class UserListAdapter : RecyclerView.Adapter<UserListItemViewHolder>() {
 

@@ -1,7 +1,10 @@
-package com.picpay.desafio.android.feature_user.data
+package com.picpay.desafio.android.com.picpay.desafio.android.feature_user.data.repository
 
-import com.picpay.desafio.android.feature_user.domain.UserDomainModel
-import com.picpay.desafio.android.feature_user.domain.UserRepository
+import com.picpay.desafio.android.com.picpay.desafio.android.common.NetworkResult
+import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.data.service.UserApiService
+import com.picpay.desafio.android.feature_user.data.toDomainModel
+import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.domain.model.UserDomainModel
+import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.domain.repository.UserRepository
 import com.picpay.desafio.android.feature_user.domain.exception.GeneralException
 import com.picpay.desafio.android.feature_user.domain.exception.NetworkException
 import java.io.IOException

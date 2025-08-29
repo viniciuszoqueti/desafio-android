@@ -1,4 +1,4 @@
-package com.picpay.desafio.android.feature_user.data
+package com.picpay.desafio.android.com.picpay.desafio.android.feature_user.data.model
 
 import com.google.gson.annotations.SerializedName
 
@@ -14,5 +14,3 @@ data class UserDataModel(
     @SerializedName("phone")
     val phone: String
 )
-
-

@@ -1,6 +1,8 @@
 package com.picpay.desafio.android.feature_user.domain
 
-import com.picpay.desafio.android.feature_user.data.NetworkResult
+import com.picpay.desafio.android.com.picpay.desafio.android.common.NetworkResult
+import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.domain.model.UserDomainModel
+import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.domain.repository.UserRepository
 import javax.inject.Inject
 
 class UserUseCaseImpl @Inject constructor(

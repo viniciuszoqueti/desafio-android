@@ -1,18 +1,27 @@
 package com.picpay.desafio.android.feature_user.data.di
 
-import com.picpay.desafio.android.feature_user.data.UserRepositoryImpl
-import com.picpay.desafio.android.feature_user.domain.UserRepository
-import dagger.Binds
+import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.data.repository.UserRepositoryImpl
+import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.data.service.UserApiService
+import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.domain.repository.UserRepository
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class DataModule {
+class DataModule {
 
-    @Binds
+    @Provides
     @Singleton
-    abstract fun bindUserRepository(userRepositoryImpl: UserRepositoryImpl): UserRepository
+    fun provideUserRepository(userApiService: UserApiService): UserRepository =
+        UserRepositoryImpl(userApiService)
+
+    @Provides
+    @Singleton
+    fun provideUserApiService(retrofit: Retrofit): UserApiService {
+        return retrofit.create(UserApiService::class.java)
+    }
 }

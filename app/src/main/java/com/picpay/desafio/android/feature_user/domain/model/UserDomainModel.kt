@@ -1,4 +1,4 @@
-package com.picpay.desafio.android.feature_user.domain
+package com.picpay.desafio.android.com.picpay.desafio.android.feature_user.domain.model
 
 data class UserDomainModel(
     val id: Int,
@@ -7,5 +7,3 @@ data class UserDomainModel(
     val email: String,
     val phone: String,
 )
-
-

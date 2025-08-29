@@ -10,5 +10,7 @@ class UserListItemViewHolder(private val binding: ListItemUserBinding) :
     fun bind(user: UserDomainModel) {
         binding.name.text = user.name
         binding.username.text = user.username
+        binding.email.text = user.email
+        binding.phone.text = user.phone
     }
 }

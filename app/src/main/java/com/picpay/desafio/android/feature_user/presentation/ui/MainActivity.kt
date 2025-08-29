@@ -6,9 +6,10 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.picpay.desafio.android.databinding.ActivityMainBinding
-import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.presentation.view_state.MainUiState
+import com.picpay.desafio.android.R
 import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.presentation.view_model.MainViewModel
+import com.picpay.desafio.android.com.picpay.desafio.android.feature_user.presentation.view_state.MainUiState
+import com.picpay.desafio.android.databinding.ActivityMainBinding
 import com.picpay.desafio.android.feature_user.presentation.UserListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         setUpUI()
         setUpObservers()
+        setUpListeners()
 
         if (savedInstanceState == null) viewModel.loadUsers()
     }
@@ -42,6 +44,7 @@ class MainActivity : AppCompatActivity() {
             viewModel.uiState.collect { state ->
                 binding.userListProgressBar.visibility = View.GONE
                 binding.recyclerView.visibility = View.GONE
+                binding.errorContainer.visibility = View.GONE
 
                 when (state) {
                     is MainUiState.Loading -> {
@@ -53,11 +56,23 @@ class MainActivity : AppCompatActivity() {
                         binding.recyclerView.visibility = View.VISIBLE
                     }
 
-                    is MainUiState.Error -> {
+                    is MainUiState.Error.Generic -> {
+                        binding.errorContainer.visibility = View.VISIBLE
+                        binding.errorMessage.text = getString(R.string.error_generic)
+                    }
 
+                    is MainUiState.Error.Network -> {
+                        binding.errorContainer.visibility = View.VISIBLE
+                        binding.errorMessage.text = getString(R.string.error_network)
                     }
                 }
             }
+        }
+    }
+
+    private fun setUpListeners() {
+        binding.retryButton.setOnClickListener {
+            viewModel.loadUsers()
         }
     }
 }

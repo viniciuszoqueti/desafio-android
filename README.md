@@ -1,6 +1,6 @@
 # PicPay - Desafio Android
 
-<img src="https://github.com/mobilepicpay/desafio-android/blob/master/desafio-picpay.gif" width="300"/>
+<img src="https://github.com/viniciuszoqueti/desafio-android/blob/f5dc492f2cebf8b88413ba16aa348daee7e15855/desafio-picpay.gif" width="300"/>
 
 ## Sobre
 
